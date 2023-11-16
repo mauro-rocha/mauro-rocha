@@ -36,6 +36,7 @@
 ## Conecte-se Comigo
 - 📧 [E-mail](mailto:mauro@ghbranding.com.br)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/mauro-lucio-rocha)
+- 👨🏽‍💻 [Codeium](https://codeium.com/profile/mauro)
 
 ## Contribuições e Colaborações
 - 🤝 Estou aberto a colaborações e interações com a comunidade do GitHub.
