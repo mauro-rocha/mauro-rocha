@@ -1,6 +1,14 @@
 (function () {
   "use strict";
 
+  try {
+    const currentYear = new Date().getFullYear();
+    const currentYearComp = document.getElementById("current-year");
+    currentYearComp.innerText = currentYear;
+  } catch (error) {
+    // ignore
+  }
+
   /**
    * Easy selector helper function
    */
