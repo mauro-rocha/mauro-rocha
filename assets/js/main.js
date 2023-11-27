@@ -176,12 +176,21 @@
   /**
    * Intro type effect
    */
+  const SKILLS = [
+    " ",
+    "Software_Engineer.exe",
+    "AI.py",
+    "'Cofee ☕'.jar",
+    " 'Music ♫'.mp3",
+    "Innovations.go",
+    "Agile.ts",
+  ];
+
   const typed = select(".typed");
+
   if (typed) {
-    let typed_strings = typed.getAttribute("data-typed-items");
-    typed_strings = typed_strings.split(",");
     new Typed(".typed", {
-      strings: typed_strings,
+      strings: SKILLS,
       loop: true,
       startDelay: 512,
       typeSpeed: 80,

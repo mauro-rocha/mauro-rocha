@@ -1,0 +1,13 @@
+# CSS
+assets/css/style.css
+
+assets/vendor
+
+# JS
+assets/js/main.js
+
+# Images
+assets/img/apple-touch-icon.webp
+assets/img/favicon.ico
+assets/img/mauro-perfil.webp
+assets/img/counters-bg.webp
