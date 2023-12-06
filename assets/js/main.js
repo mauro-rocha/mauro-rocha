@@ -9,6 +9,25 @@
     // ignore
   }
 
+  try {
+    // calculate age by today's date
+    const today = new Date();
+    const birthDate = new Date(1991, 1, 7);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    console.log(age);
+
+    const ageComp = document.getElementById("age");
+    ageComp.innerText = `${age} years old, `;
+  } catch (error) {
+    // ignore
+  }
+
   /**
    * Easy selector helper function
    */

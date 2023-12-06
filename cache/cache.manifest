@@ -1,9 +1,11 @@
 # CSS
 assets/css/style.css
-
-assets/vendor
+assets/css/bootstrap/bootstrap.min.css
+assets/css/bootstrap/bootstrap-icons/bootstrap-icons.css
 
 # JS
+assets/js/bootstrap/bootstrap.bundle.min.js
+asstes/js/typed/typed.umd.js
 assets/js/main.js
 
 # Images
@@ -11,3 +13,8 @@ assets/img/apple-touch-icon.webp
 assets/img/favicon.ico
 assets/img/mauro-perfil.webp
 assets/img/counters-bg.webp
+
+# Images fallback
+assets/img/fallback/apple-touch-icon.png
+assets/img/fallback/mauro-perfil.png
+assets/img/fallback/counters-bg.png
