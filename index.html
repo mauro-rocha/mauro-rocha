@@ -16,6 +16,143 @@
       gtag("config", "G-50E4VRJ166");
     </script>
 
+    <script type="text/javascript">
+      !(function () {
+        "use strict";
+        !(function (e, t) {
+          var n = e.amplitude || { _q: [], _iq: {} };
+          if (n.invoked)
+            e.console &&
+              console.error &&
+              console.error("Amplitude snippet has been loaded.");
+          else {
+            var r = function (e, t) {
+                e.prototype[t] = function () {
+                  return (
+                    this._q.push({
+                      name: t,
+                      args: Array.prototype.slice.call(arguments, 0),
+                    }),
+                    this
+                  );
+                };
+              },
+              s = function (e, t, n) {
+                return function (r) {
+                  e._q.push({
+                    name: t,
+                    args: Array.prototype.slice.call(n, 0),
+                    resolve: r,
+                  });
+                };
+              },
+              o = function (e, t, n) {
+                e[t] = function () {
+                  if (n)
+                    return {
+                      promise: new Promise(
+                        s(e, t, Array.prototype.slice.call(arguments))
+                      ),
+                    };
+                };
+              },
+              i = function (e) {
+                for (var t = 0; t < m.length; t++) o(e, m[t], !1);
+                for (var n = 0; n < g.length; n++) o(e, g[n], !0);
+              };
+            n.invoked = !0;
+            var u = t.createElement("script");
+            (u.type = "text/javascript"),
+              (u.integrity =
+                "sha384-x0ik2D45ZDEEEpYpEuDpmj05fY91P7EOZkgdKmq4dKL/ZAVcufJ+nULFtGn0HIZE"),
+              (u.crossOrigin = "anonymous"),
+              (u.async = !0),
+              (u.src =
+                "https://cdn.amplitude.com/libs/analytics-browser-2.0.0-min.js.gz"),
+              (u.onload = function () {
+                e.amplitude.runQueuedFunctions ||
+                  console.log("[Amplitude] Error: could not load SDK");
+              });
+            var a = t.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(u, a);
+            for (
+              var c = function () {
+                  return (this._q = []), this;
+                },
+                p = [
+                  "add",
+                  "append",
+                  "clearAll",
+                  "prepend",
+                  "set",
+                  "setOnce",
+                  "unset",
+                  "preInsert",
+                  "postInsert",
+                  "remove",
+                  "getUserProperties",
+                ],
+                l = 0;
+              l < p.length;
+              l++
+            )
+              r(c, p[l]);
+            n.Identify = c;
+            for (
+              var d = function () {
+                  return (this._q = []), this;
+                },
+                f = [
+                  "getEventProperties",
+                  "setProductId",
+                  "setQuantity",
+                  "setPrice",
+                  "setRevenue",
+                  "setRevenueType",
+                  "setEventProperties",
+                ],
+                v = 0;
+              v < f.length;
+              v++
+            )
+              r(d, f[v]);
+            n.Revenue = d;
+            var m = [
+                "getDeviceId",
+                "setDeviceId",
+                "getSessionId",
+                "setSessionId",
+                "getUserId",
+                "setUserId",
+                "setOptOut",
+                "setTransport",
+                "reset",
+                "extendSession",
+              ],
+              g = [
+                "init",
+                "add",
+                "remove",
+                "track",
+                "logEvent",
+                "identify",
+                "groupIdentify",
+                "setGroup",
+                "revenue",
+                "flush",
+              ];
+            i(n),
+              (n.createInstance = function (e) {
+                return (n._iq[e] = { _q: [] }), i(n._iq[e]), n._iq[e];
+              }),
+              (e.amplitude = n);
+          }
+        })(window, document);
+      })();
+
+      amplitude.init("cdb148b5d41a067c9c93ebc5fb855d34");
+    </script>
+
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -56,7 +193,11 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-between">
-        <a href="#" class="logo" aria-label="Mauro Lúcio da Rocha"
+        <a
+          href="#"
+          class="logo"
+          aria-label="Mauro Lúcio da Rocha"
+          onclick="eventTrack('[Navigation] Home Logo')"
           ><img
             src="assets/img/mauro-perfil.webp"
             alt="Mauro Lúcio da Rocha"
@@ -67,17 +208,29 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li>
-              <a class="nav-link scrollto active" href="#hero" aria-label="Home"
+              <a
+                class="nav-link scrollto active"
+                href="#hero"
+                aria-label="Home"
+                onclick="eventTrack('[Navigation] Home')"
                 >Home</a
               >
             </li>
             <li>
-              <a class="nav-link scrollto" href="#about" aria-label="About"
+              <a
+                class="nav-link scrollto"
+                href="#about"
+                aria-label="About"
+                onclick="eventTrack('[Navigation] About')"
                 >About</a
               >
             </li>
             <li>
-              <a class="nav-link scrollto" href="#contact" aria-label="Contact"
+              <a
+                class="nav-link scrollto"
+                href="#contact"
+                aria-label="Contact"
+                onclick="eventTrack('[Navigation] Contact')"
                 >Contact</a
               >
             </li>
@@ -162,7 +315,8 @@
                           aria-label="Reac Native"
                         ></div>
                       </div>
-                      <span>PEOPLE</span> <span class="pull-right">75%</span>
+                      <span>PROJECT MANAGER</span>
+                      <span class="pull-right">75%</span>
                       <div class="progress">
                         <div
                           class="progress-bar"
@@ -186,7 +340,7 @@
                           aria-label="Python"
                         ></div>
                       </div>
-                      <span>NODE</span>
+                      <span>NODEJS</span>
                       <span class="pull-right">90%</span>
                       <div class="progress">
                         <div
@@ -215,6 +369,7 @@
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="GH Brandtech"
+                          onclick="eventTrack('ghbrandtech')"
                           >GH Brandtech</a
                         >. A lover of coffee, music, and cutting-edge
                         technologies.
@@ -269,6 +424,7 @@
                               aria-label="Mauro Lúcio da Rocha on Github"
                               href="https://github.com/mauro-rocha"
                               target="_blank"
+                              onclick="eventTrack('[Contact] Github')"
                               ><span class="ico-circle"
                                 ><i class="bi bi-github"></i></span
                             ></a>
@@ -278,6 +434,7 @@
                               aria-label="Mauro Lúcio da Rocha on Instagram"
                               href="https://www.instagram.com/mauro_lucio_0"
                               target="_blank"
+                              onclick="eventTrack('[Contact] Instagram')"
                               ><span class="ico-circle"
                                 ><i class="bi bi-instagram"></i></span
                             ></a>
@@ -287,6 +444,7 @@
                               aria-label="Mauro Lúcio da Rocha on Email"
                               href="mailto:luciomaurorocha@gmail.com"
                               target="_blank"
+                              onclick="eventTrack('[Contact] Email')"
                               ><span class="ico-circle"
                                 ><i class="bi bi-envelope-at"></i></span
                             ></a>
@@ -296,6 +454,7 @@
                               aria-label="Mauro Lúcio da Rocha on Codeium"
                               href="https://codeium.com/profile/mauro"
                               target="_blank"
+                              onclick="eventTrack('[Contact] Codeium')"
                               ><span class="ico-circle"
                                 ><i class="bi bi-file-earmark-code"></i></span
                             ></a>
@@ -305,6 +464,7 @@
                               aria-label="Mauro Lúcio da Rocha on LinkedIn"
                               href="https://www.linkedin.com/in/mauro-lucio-rocha"
                               target="_blank"
+                              onclick="eventTrack('[Contact] LinkedIn')"
                               ><span class="ico-circle"
                                 ><i class="bi bi-linkedin"></i></span
                             ></a>
@@ -344,7 +504,16 @@
       href="#"
       aria-label="Back to top"
       class="back-to-top d-flex align-items-center justify-content-center"
+      onclick="eventTrack('[Navigation] Back to top')"
       ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <a
+      href="#about"
+      aria-label="Go to bottom"
+      class="go-to-bottom d-flex align-items-center justify-content-center active"
+      onclick="eventTrack('[Navigation] Go to bottom')"
+      ><i class="bi bi-arrow-down-short"></i
     ></a>
 
     <!-- Template Main JS File -->

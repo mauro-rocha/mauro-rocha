@@ -20,8 +20,6 @@
       age--;
     }
 
-    console.log(age);
-
     const ageComp = document.getElementById("age");
     ageComp.innerText = `${age} years old, `;
   } catch (error) {
@@ -135,6 +133,22 @@
   }
 
   /**
+   * Go to bottom button
+   */
+  let goToBottom = select(".go-to-bottom");
+  if (goToBottom) {
+    const toggleGoToBottom = () => {
+      if (window.scrollY < 100) {
+        goToBottom.classList.add("active");
+      } else {
+        goToBottom.classList.remove("active");
+      }
+    };
+    window.addEventListener("load", toggleGoToBottom);
+    onscroll(document, toggleGoToBottom);
+  }
+
+  /**
    * Mobile nav toggle
    */
   on("click", ".mobile-nav-toggle", function (e) {
@@ -220,4 +234,11 @@
       smartBackspace: true,
     });
   }
+
 })();
+
+// Event track
+const eventTrack = (eventType, eventProperties) => {
+  // Track events with optional properties
+  amplitude.track(eventType, eventProperties);
+};
