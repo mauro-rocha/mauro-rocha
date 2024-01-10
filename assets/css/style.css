@@ -395,8 +395,8 @@ a:hover {
 }
 
 .img-about-me {
-  width: 100%;
-  height: auto;
+  min-width: 176px;
+  min-height: 176px;
 }
 
 #header.header-scrolled {
