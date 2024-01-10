@@ -73,12 +73,6 @@ a:hover {
   box-shadow: 0 0 0 4px #cde1f8;
 }
 
-.display-5 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  line-height: 1.1;
-}
-
 .display-6 {
   font-size: calc(1rem + 0.8vw);
     font-weight: 300;
