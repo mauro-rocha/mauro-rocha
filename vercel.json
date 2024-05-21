@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/pt-br.html", "destination": "/pt-br" }
+  ]
+}
