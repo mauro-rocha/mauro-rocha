@@ -1,141 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script type="text/javascript">
-      !(function () {
-        "use strict";
-        !(function (e, t) {
-          var n = e.amplitude || { _q: [], _iq: {} };
-          if (n.invoked)
-            e.console &&
-              console.error &&
-              console.error("Amplitude snippet has been loaded.");
-          else {
-            var r = function (e, t) {
-                e.prototype[t] = function () {
-                  return (
-                    this._q.push({
-                      name: t,
-                      args: Array.prototype.slice.call(arguments, 0),
-                    }),
-                    this
-                  );
-                };
-              },
-              s = function (e, t, n) {
-                return function (r) {
-                  e._q.push({
-                    name: t,
-                    args: Array.prototype.slice.call(n, 0),
-                    resolve: r,
-                  });
-                };
-              },
-              o = function (e, t, n) {
-                e[t] = function () {
-                  if (n)
-                    return {
-                      promise: new Promise(
-                        s(e, t, Array.prototype.slice.call(arguments))
-                      ),
-                    };
-                };
-              },
-              i = function (e) {
-                for (var t = 0; t < m.length; t++) o(e, m[t], !1);
-                for (var n = 0; n < g.length; n++) o(e, g[n], !0);
-              };
-            n.invoked = !0;
-            var u = t.createElement("script");
-            (u.type = "text/javascript"),
-              (u.integrity =
-                "sha384-x0ik2D45ZDEEEpYpEuDpmj05fY91P7EOZkgdKmq4dKL/ZAVcufJ+nULFtGn0HIZE"),
-              (u.crossOrigin = "anonymous"),
-              (u.async = !0),
-              (u.src =
-                "https://cdn.amplitude.com/libs/analytics-browser-2.0.0-min.js.gz"),
-              (u.onload = function () {
-                e.amplitude.runQueuedFunctions ||
-                  console.log("[Amplitude] Error: could not load SDK");
-              });
-            var a = t.getElementsByTagName("script")[0];
-            a.parentNode.insertBefore(u, a);
-            for (
-              var c = function () {
-                  return (this._q = []), this;
-                },
-                p = [
-                  "add",
-                  "append",
-                  "clearAll",
-                  "prepend",
-                  "set",
-                  "setOnce",
-                  "unset",
-                  "preInsert",
-                  "postInsert",
-                  "remove",
-                  "getUserProperties",
-                ],
-                l = 0;
-              l < p.length;
-              l++
-            )
-              r(c, p[l]);
-            n.Identify = c;
-            for (
-              var d = function () {
-                  return (this._q = []), this;
-                },
-                f = [
-                  "getEventProperties",
-                  "setProductId",
-                  "setQuantity",
-                  "setPrice",
-                  "setRevenue",
-                  "setRevenueType",
-                  "setEventProperties",
-                ],
-                v = 0;
-              v < f.length;
-              v++
-            )
-              r(d, f[v]);
-            n.Revenue = d;
-            var m = [
-                "getDeviceId",
-                "setDeviceId",
-                "getSessionId",
-                "setSessionId",
-                "getUserId",
-                "setUserId",
-                "setOptOut",
-                "setTransport",
-                "reset",
-                "extendSession",
-              ],
-              g = [
-                "init",
-                "add",
-                "remove",
-                "track",
-                "logEvent",
-                "identify",
-                "groupIdentify",
-                "setGroup",
-                "revenue",
-                "flush",
-              ];
-            i(n),
-              (n.createInstance = function (e) {
-                return (n._iq[e] = { _q: [] }), i(n._iq[e]), n._iq[e];
-              }),
-              (e.amplitude = n);
-          }
-        })(window, document);
-      })();
 
-      amplitude.init("cdb148b5d41a067c9c93ebc5fb855d34");
+<head>
+    <script type="text/javascript">
+        !(function () {
+            "use strict";
+            !(function (e, t) {
+                var n = e.amplitude || { _q: [], _iq: {} };
+                if (n.invoked)
+                    e.console &&
+                        console.error &&
+                        console.error("Amplitude snippet has been loaded.");
+                else {
+                    var r = function (e, t) {
+                        e.prototype[t] = function () {
+                            return (
+                                this._q.push({
+                                    name: t,
+                                    args: Array.prototype.slice.call(arguments, 0),
+                                }),
+                                this
+                            );
+                        };
+                    },
+                        s = function (e, t, n) {
+                            return function (r) {
+                                e._q.push({
+                                    name: t,
+                                    args: Array.prototype.slice.call(n, 0),
+                                    resolve: r,
+                                });
+                            };
+                        },
+                        o = function (e, t, n) {
+                            e[t] = function () {
+                                if (n)
+                                    return {
+                                        promise: new Promise(
+                                            s(e, t, Array.prototype.slice.call(arguments))
+                                        ),
+                                    };
+                            };
+                        },
+                        i = function (e) {
+                            for (var t = 0; t < m.length; t++) o(e, m[t], !1);
+                            for (var n = 0; n < g.length; n++) o(e, g[n], !0);
+                        };
+                    n.invoked = !0;
+                    var u = t.createElement("script");
+                    (u.type = "text/javascript"),
+                        (u.integrity =
+                            "sha384-x0ik2D45ZDEEEpYpEuDpmj05fY91P7EOZkgdKmq4dKL/ZAVcufJ+nULFtGn0HIZE"),
+                        (u.crossOrigin = "anonymous"),
+                        (u.async = !0),
+                        (u.src =
+                            "https://cdn.amplitude.com/libs/analytics-browser-2.0.0-min.js.gz"),
+                        (u.onload = function () {
+                            e.amplitude.runQueuedFunctions ||
+                                console.log("[Amplitude] Error: could not load SDK");
+                        });
+                    var a = t.getElementsByTagName("script")[0];
+                    a.parentNode.insertBefore(u, a);
+                    for (
+                        var c = function () {
+                            return (this._q = []), this;
+                        },
+                        p = [
+                            "add",
+                            "append",
+                            "clearAll",
+                            "prepend",
+                            "set",
+                            "setOnce",
+                            "unset",
+                            "preInsert",
+                            "postInsert",
+                            "remove",
+                            "getUserProperties",
+                        ],
+                        l = 0;
+                        l < p.length;
+                        l++
+                    )
+                        r(c, p[l]);
+                    n.Identify = c;
+                    for (
+                        var d = function () {
+                            return (this._q = []), this;
+                        },
+                        f = [
+                            "getEventProperties",
+                            "setProductId",
+                            "setQuantity",
+                            "setPrice",
+                            "setRevenue",
+                            "setRevenueType",
+                            "setEventProperties",
+                        ],
+                        v = 0;
+                        v < f.length;
+                        v++
+                    )
+                        r(d, f[v]);
+                    n.Revenue = d;
+                    var m = [
+                        "getDeviceId",
+                        "setDeviceId",
+                        "getSessionId",
+                        "setSessionId",
+                        "getUserId",
+                        "setUserId",
+                        "setOptOut",
+                        "setTransport",
+                        "reset",
+                        "extendSession",
+                    ],
+                        g = [
+                            "init",
+                            "add",
+                            "remove",
+                            "track",
+                            "logEvent",
+                            "identify",
+                            "groupIdentify",
+                            "setGroup",
+                            "revenue",
+                            "flush",
+                        ];
+                    i(n),
+                        (n.createInstance = function (e) {
+                            return (n._iq[e] = { _q: [] }), i(n._iq[e]), n._iq[e];
+                        }),
+                        (e.amplitude = n);
+                }
+            })(window, document);
+        })();
+
+        amplitude.init("cdb148b5d41a067c9c93ebc5fb855d34");
     </script>
 
     <meta charset="utf-8" />
@@ -143,387 +144,283 @@
 
     <title>Mauro Lúcio da Rocha - Portfolio</title>
     <meta
-      content="Mauro Lúcio da Rocha - With over 10 years of experience in mobile development, web systems, and data analysis. Coffee enthusiast, music lover, and a driving force behind cutting-edge innovations."
-      name="description"
-    />
+        content="Mauro Lúcio da Rocha - With over 10 years of experience in mobile development, web systems, and data analysis. Coffee enthusiast, music lover, and a driving force behind cutting-edge innovations."
+        name="description" />
 
     <meta
-      content="Programador, Engenheiro de Software, Desenvolvedor, Desenvolvedor Mobile, Desenvolvedor Web, Sites, Aplicativos, Desenvolvimento, Inovação, TI, IT, Coordenador de Tecnologia, Mauro Lúcio da Rocha, Technology Coordinator, Software Engineer, Mobile Development, Web Systems Development, Data Science, Coffee, Music, Innovation, RockIT Innovations, GH, GH Branding, GH Brandtech"
-      name="keywords"
-    />
+        content="Programador, Engenheiro de Software, Desenvolvedor, Desenvolvedor Mobile, Desenvolvedor Web, Sites, Aplicativos, Desenvolvimento, Inovação, TI, IT, Coordenador de Tecnologia, Mauro Lúcio da Rocha, Technology Coordinator, Software Engineer, Mobile Development, Web Systems Development, Data Science, Coffee, Music, Innovation, RockIT Innovations, GH, GH Branding, GH Brandtech"
+        name="keywords" />
 
     <meta property="og:image" content="/assets/img/fallback/mauro-perfil.png" />
 
-    <meta
-      name="google-site-verification"
-      content="ZLQNqCdPLjqamIOXHVqejGoiCag6lpyf75PQypPG9dc"
-    />
-
-    <!-- <link rel="canonical" href="https://mauro-rocha.com.br" /> -->
+    <meta name="google-site-verification" content="ZLQNqCdPLjqamIOXHVqejGoiCag6lpyf75PQypPG9dc" />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.ico" rel="icon" />
-    <link
-      href="assets/img/fallback/apple-touch-icon.png"
-      rel="apple-touch-icon"
-    />
+    <link href="assets/img/fallback/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Vendor CSS Files -->
     <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link
-      href="assets/css/bootstrap/bootstrap-icons/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
+    <link href="assets/css/bootstrap/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <a
-          href="#"
-          class="logo"
-          aria-label="Mauro Lúcio da Rocha"
-          onclick="eventTrack('[Navigation] Home Logo')"
-          ><img
-            src="assets/img/mauro-perfil.webp"
-            alt="Mauro Lúcio da Rocha"
-            class="img-fluid"
-            onerror="this.onerror=null; this.src='assets/img/fallback/mauro-perfil.png'"
-        /></a>
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="logo" aria-label="Mauro Lúcio da Rocha"
+                onclick="eventTrack('[Navigation] Home Logo')"><img src="assets/img/mauro-perfil.webp"
+                    alt="Mauro Lúcio da Rocha" class="img-fluid"
+                    onerror="this.onerror=null; this.src='assets/img/fallback/mauro-perfil.png'" /></a>
 
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li>
-              <a
-                class="nav-link scrollto active"
-                href="#hero"
-                aria-label="Home"
-                onclick="eventTrack('[Navigation] Home')"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-link scrollto"
-                href="#about"
-                aria-label="About"
-                onclick="eventTrack('[Navigation] About')"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-link scrollto"
-                href="#contact"
-                aria-label="Contact"
-                onclick="eventTrack('[Navigation] Contact')"
-                >Contact</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-link scrollto"
-                href="/pt-br"
-                aria-label="Portugues Brasileiro"
-                onclick="eventTrack('[Navigation] PT-BR')"
-              >
-                <img
-                  src="assets/icons/brazil.svg"
-                  alt="Portugues Brasileiro"
-                  width="20"
-                />
-              </a>
-            </li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li>
+                        <a class="nav-link scrollto active" href="#hero" aria-label="Home"
+                            onclick="eventTrack('[Navigation] Home')">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link scrollto" href="#about" aria-label="About"
+                            onclick="eventTrack('[Navigation] About')">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-link scrollto" href="#contact" aria-label="Contact"
+                            onclick="eventTrack('[Navigation] Contact')">Contact</a>
+                    </li>
+                    <li>
+                        <a class="nav-link scrollto" href="/pt-br" aria-label="Portugues Brasileiro"
+                            onclick="eventTrack('[Navigation] PT-BR')">
+                            <img src="assets/icons/brazil.svg" alt="Portugues Brasileiro" width="20" />
+                        </a>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+        </div>
     </header>
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
     <div class="bg-galaxy">
-      <canvas></canvas>
-      <div id="hero" class="hero route">
-        <div class="hero-content display-table">
-          <div class="table-cell">
-            <div class="container">
-              <p class="display-6 color-d">Hello, world!</p>
-              <h1 class="hero-title mb-4">I'm Mauro Lúcio da Rocha</h1>
-              <p class="hero-subtitle">><span class="typed"></span></p>
+        <canvas></canvas>
+        <div id="hero" class="hero route">
+            <div class="hero-content display-table">
+                <div class="table-cell">
+                    <div class="container">
+                        <p class="display-6 color-d">Hello, world!</p>
+                        <h1 class="hero-title mb-4">I'm Mauro Lúcio da Rocha</h1>
+                        <p class="hero-subtitle">><span class="typed"></span></p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
     <!-- End Hero Section -->
 
     <main id="main" style="background-color: white">
-      <!-- ======= About Section ======= -->
-      <section id="about" class="about-mf sect-pt4 route">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="box-shadow-full">
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about-mf sect-pt4 route">
+            <div class="container">
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-sm-12 col-lg-5">
-                        <div class="about-img">
-                          <img
-                            src="assets/img/mauro-perfil.webp"
-                            class="img-fluid rounded img-about-me"
-                            alt="Mauro Lúcio da Rocha"
-                            onerror="this.onerror=null; this.src='assets/img/fallback/mauro-perfil.png'"
-                          />
+                    <div class="col-sm-12">
+                        <div class="box-shadow-full">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-5">
+                                            <div class="about-img">
+                                                <img src="assets/img/mauro-perfil.webp"
+                                                    class="img-fluid rounded img-about-me" alt="Mauro Lúcio da Rocha"
+                                                    onerror="this.onerror=null; this.src='assets/img/fallback/mauro-perfil.png'" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-lg-7 pb-lg-0 pb-5 pt-xl-3">
+                                            <div class="about-info align-self-center">
+                                                <p>
+                                                    <span class="title-s">Name: </span>
+                                                    <span>Mauro Lúcio da Rocha</span>
+                                                </p>
+                                                <p>
+                                                    <span class="title-s">Profile: </span>
+                                                    <span>IT Coordinator</span>
+                                                </p>
+                                                <p>
+                                                    <span class="title-s">Email: </span>
+                                                    <span>luciomaurorocha@gmail.com</span>
+                                                </p>
+                                                <p>
+                                                    <span class="title-s">Phone: </span>
+                                                    <span>+55 (55) 9 9703-6280</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-mf">
+                                        <p class="title-s">Skills</p>
+                                        <span>REACT NATIVE</span>
+                                        <span class="pull-right">85%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 85%"
+                                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Reac Native"></div>
+                                        </div>
+                                        <span>PROJECT MANAGER</span>
+                                        <span class="pull-right">75%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 75%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="People"></div>
+                                        </div>
+                                        <span>PYTHON</span> <span class="pull-right">50%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Python"></div>
+                                        </div>
+                                        <span>NODEJS</span>
+                                        <span class="pull-right">90%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 90%"
+                                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Node"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="about-me pt-4 pt-md-0">
+                                        <div class="title-box-2">
+                                            <span class="title-left">About me</span>
+                                        </div>
+                                        <p class="lead">
+                                            🚀 Mauro Lúcio da Rocha, <span id="age"></span> in Santa
+                                            Rosa/RS - Brazil, Technology Coordinator at
+                                            <a class="work-company" href="http://ghbrandtech.com.br" target="_blank"
+                                                rel="noopener noreferrer" aria-label="GH Brandtech"
+                                                onclick="eventTrack('ghbrandtech')">GH Brandtech</a>. A lover of coffee,
+                                            music, and cutting-edge
+                                            technologies.
+                                        </p>
+                                        <p class="lead">
+                                            With over 10 years of experience, I specialize in Mobile
+                                            development (kotlin, flutter, react-native, expo) and
+                                            thrive on stimulating challenges. Engaged in web systems
+                                            development, focusing on Web design, SEO, UI/UX, User
+                                            Tracking, and Data Science.
+                                        </p>
+                                        <p class="lead">
+                                            I believe that every challenge is an opportunity for
+                                            learning, and I enjoy breaking away from the ordinary
+                                            because it's the innovations that spark interest and
+                                            move the world. Beyond the code, I delve into data
+                                            processing and behavior analysis. 💻☕✨
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-sm-12 col-lg-7 pb-lg-0 pb-5 pt-xl-3">
-                        <div class="about-info align-self-center">
-                          <p>
-                            <span class="title-s">Name: </span>
-                            <span>Mauro Lúcio da Rocha</span>
-                          </p>
-                          <p>
-                            <span class="title-s">Profile: </span>
-                            <span>IT Coordinator</span>
-                          </p>
-                          <p>
-                            <span class="title-s">Email: </span>
-                            <span>luciomaurorocha@gmail.com</span>
-                          </p>
-                          <p>
-                            <span class="title-s">Phone: </span>
-                            <span>+55 (55) 9 9703-6280</span>
-                          </p>
-                        </div>
-                      </div>
                     </div>
-                    <div class="skill-mf">
-                      <p class="title-s">Skills</p>
-                      <span>REACT NATIVE</span>
-                      <span class="pull-right">85%</span>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          style="width: 85%"
-                          aria-valuenow="85"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                          aria-label="Reac Native"
-                        ></div>
-                      </div>
-                      <span>PROJECT MANAGER</span>
-                      <span class="pull-right">75%</span>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          style="width: 75%"
-                          aria-valuenow="75"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                          aria-label="People"
-                        ></div>
-                      </div>
-                      <span>PYTHON</span> <span class="pull-right">50%</span>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          style="width: 50%"
-                          aria-valuenow="50"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                          aria-label="Python"
-                        ></div>
-                      </div>
-                      <span>NODEJS</span>
-                      <span class="pull-right">90%</span>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          style="width: 90%"
-                          aria-valuenow="90"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                          aria-label="Node"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="about-me pt-4 pt-md-0">
-                      <div class="title-box-2">
-                        <span class="title-left">About me</span>
-                      </div>
-                      <p class="lead">
-                        🚀 Mauro Lúcio da Rocha, <span id="age"></span> in Santa
-                        Rosa/RS - Brazil, Technology Coordinator at
-                        <a
-                          class="work-company"
-                          href="http://ghbrandtech.com.br"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="GH Brandtech"
-                          onclick="eventTrack('ghbrandtech')"
-                          >GH Brandtech</a
-                        >. A lover of coffee, music, and cutting-edge
-                        technologies.
-                      </p>
-                      <p class="lead">
-                        With over 10 years of experience, I specialize in Mobile
-                        development (kotlin, flutter, react-native, expo) and
-                        thrive on stimulating challenges. Engaged in web systems
-                        development, focusing on Web design, SEO, UI/UX, User
-                        Tracking, and Data Science.
-                      </p>
-                      <p class="lead">
-                        I believe that every challenge is an opportunity for
-                        learning, and I enjoy breaking away from the ordinary
-                        because it's the innovations that spark interest and
-                        move the world. Beyond the code, I delve into data
-                        processing and behavior analysis. 💻☕✨
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- End About Section -->
+        </section>
+        <!-- End About Section -->
 
-      <!-- ======= Contact Section ======= -->
-      <section
-        id="contact"
-        class="paralax-mf footer-paralax bg-image sect-mt4 route"
-        style="
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="
           background-image: url(assets/img/counters-bg.webp);
           background-image: url(assets/img/fallback/counters-bg.jpg);
-        "
-      >
-        <div class="overlay-mf"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div id="contact" class="box-shadow-full">
+        ">
+            <div class="overlay-mf"></div>
+            <div class="container">
                 <div class="row">
-                  <div class="col-12">
-                    <div class="title-box-1 text-center">
-                      <span class="title-left">Contact</span>
+                    <div class="col-sm-12">
+                        <div id="contact" class="box-shadow-full">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="title-box-1 text-center">
+                                        <span class="title-left">Contact</span>
 
-                      <div class="socials">
-                        <ul>
-                          <li>
-                            <a
-                              aria-label="Mauro Lúcio da Rocha on Github"
-                              href="https://github.com/mauro-rocha"
-                              target="_blank"
-                              onclick="eventTrack('[Contact] Github')"
-                              ><span class="ico-circle"
-                                ><i class="bi bi-github"></i></span
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              aria-label="Mauro Lúcio da Rocha on Instagram"
-                              href="https://www.instagram.com/mauro_lucio_0"
-                              target="_blank"
-                              onclick="eventTrack('[Contact] Instagram')"
-                              ><span class="ico-circle"
-                                ><i class="bi bi-instagram"></i></span
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              aria-label="Mauro Lúcio da Rocha on Email"
-                              href="mailto:luciomaurorocha@gmail.com"
-                              target="_blank"
-                              onclick="eventTrack('[Contact] Email')"
-                              ><span class="ico-circle"
-                                ><i class="bi bi-envelope-at"></i></span
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              aria-label="Mauro Lúcio da Rocha on Codeium"
-                              href="https://codeium.com/profile/mauro"
-                              target="_blank"
-                              onclick="eventTrack('[Contact] Codeium')"
-                              ><span class="ico-circle"
-                                ><i class="bi bi-file-earmark-code"></i></span
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              aria-label="Mauro Lúcio da Rocha on LinkedIn"
-                              href="https://www.linkedin.com/in/mauro-lucio-rocha"
-                              target="_blank"
-                              onclick="eventTrack('[Contact] LinkedIn')"
-                              ><span class="ico-circle"
-                                ><i class="bi bi-linkedin"></i></span
-                            ></a>
-                          </li>
-                        </ul>
-                      </div>
+                                        <div class="socials">
+                                            <ul>
+                                                <li>
+                                                    <a aria-label="Mauro Lúcio da Rocha on Github"
+                                                        href="https://github.com/mauro-rocha" target="_blank"
+                                                        onclick="eventTrack('[Contact] Github')"><span
+                                                            class="ico-circle"><i class="bi bi-github"></i></span></a>
+                                                </li>
+                                                <li>
+                                                    <a aria-label="Mauro Lúcio da Rocha on Instagram"
+                                                        href="https://www.instagram.com/mauro_lucio_0" target="_blank"
+                                                        onclick="eventTrack('[Contact] Instagram')"><span
+                                                            class="ico-circle"><i
+                                                                class="bi bi-instagram"></i></span></a>
+                                                </li>
+                                                <li>
+                                                    <a aria-label="Mauro Lúcio da Rocha on Email"
+                                                        href="mailto:luciomaurorocha@gmail.com" target="_blank"
+                                                        onclick="eventTrack('[Contact] Email')"><span
+                                                            class="ico-circle"><i
+                                                                class="bi bi-envelope-at"></i></span></a>
+                                                </li>
+                                                <li>
+                                                    <a aria-label="Mauro Lúcio da Rocha on Codeium"
+                                                        href="https://codeium.com/profile/mauro" target="_blank"
+                                                        onclick="eventTrack('[Contact] Codeium')"><span
+                                                            class="ico-circle"><i
+                                                                class="bi bi-file-earmark-code"></i></span></a>
+                                                </li>
+                                                <li>
+                                                    <a aria-label="Mauro Lúcio da Rocha on LinkedIn"
+                                                        href="https://www.linkedin.com/in/mauro-lucio-rocha"
+                                                        target="_blank" onclick="eventTrack('[Contact] LinkedIn')"><span
+                                                            class="ico-circle"><i class="bi bi-linkedin"></i></span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Contact Section -->
+        </section>
+        <!-- End Contact Section -->
     </main>
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="copyright-box">
-              <p class="copyright">
-                Copyright &copy; <span id="current-year"></span>
-                <strong>RockIT Innovations</strong>. All Rights Reserved.
-              </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright-box">
+                        <p class="copyright">
+                            Copyright &copy; <span id="current-year"></span>
+                            <strong>RockIT Innovations</strong>. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
     <!-- End  Footer -->
 
-    <a
-      href="#"
-      aria-label="Back to top"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      onclick="eventTrack('[Navigation] Back to top')"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    <a href="#" aria-label="Back to top" class="back-to-top d-flex align-items-center justify-content-center"
+        onclick="eventTrack('[Navigation] Back to top')"><i class="bi bi-arrow-up-short"></i></a>
 
-    <a
-      href="#about"
-      aria-label="Go to bottom"
-      class="go-to-bottom d-flex align-items-center justify-content-center active"
-      onclick="eventTrack('[Navigation] Go to bottom')"
-      ><i class="bi bi-arrow-down-short"></i
-    ></a>
+    <a href="#about" aria-label="Go to bottom"
+        class="go-to-bottom d-flex align-items-center justify-content-center active"
+        onclick="eventTrack('[Navigation] Go to bottom')"><i class="bi bi-arrow-down-short"></i></a>
 
     <!-- Template Main JS File -->
     <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="assets/js/galaxy.js"></script>
     <script src="assets/js/typed/typed.umd.js"></script>
     <script src="assets/js/main.js"></script>
-  </body>
+</body>
+
 </html>
